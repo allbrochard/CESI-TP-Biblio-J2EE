@@ -8,12 +8,11 @@ public class Livre {
 	private String nomUser;
 	private Long id;
 	
-	public Livre(String titre, String edition, String auteur, Long id) {
+	public Livre(String titre, String edition, String auteur) {
 		super();
 		this.titre = titre;
 		this.edition = edition;
 		this.auteur = auteur;
-		this.id = id;
 	}
 	public String getTitre() {
 		return titre;

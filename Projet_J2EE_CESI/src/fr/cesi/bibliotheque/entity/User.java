@@ -6,12 +6,11 @@ public class User {
 	private String password;
 	private Long id;
 
-	public User(String nom, String login, String password, Long id) {
+	public User(String nom, String login, String password) {
 		super();
 		this.nom = nom;
 		this.login = login;
 		this.password = password;
-		this.id = id;
 	}
 	public String getNom() {
 		return nom;

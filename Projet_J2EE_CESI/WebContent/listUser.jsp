@@ -96,32 +96,14 @@
 				<c:when test="${ !empty role}">
 					<div class="col-md-8 offset-md-2">
 						<table class="table">
-							<c:forEach items="${livres}" var="li">
+							<c:forEach items="${users}" var="user">
 								<tr>
-									<td <c:if test="${role == 'user' and ( !empty(li.idUser) and li.idUser != id )}">
-										style="text-decoration: line-through;"
-									</c:if> >${li.id}</td>
-									<td <c:if test="${role == 'user' and ( !empty(li.idUser) and li.idUser != id )}">
-										style="text-decoration: line-through;"
-									</c:if>>${li.titre}</td>
-									<td <c:if test="${role == 'user' and ( !empty(li.idUser) and li.idUser != id )}">
-										style="text-decoration: line-through;"
-									</c:if>>${li.auteur}</td>
-									<td <c:if test="${role == 'user' and ( !empty(li.idUser) and li.idUser != id )}">
-										style="text-decoration: line-through;"
-									</c:if>>${li.edition}</td>
+									<td>${user.id}</td>
+									<td>${user.nom}</td>
+									<td>${user.login}</td>
 									<c:choose>
-										<c:when test="${role == 'user' and ( empty(li.idUser) )}">
-											<td><a href="http://localhost:8080/Projet_J2EE_CESI/reserver?id=${li.id}&idUser=${id}&nom=${nom}"  class="btn btn-primary">Reserver</a></td>
-										</c:when>
-										<c:when test="${role == 'user' and ( li.idUser == id )}">
-											<td><a href="http://localhost:8080/Projet_J2EE_CESI/reserver?idUnReserve=${li.id}"  class="btn btn-success">Liberer</a></td>
-										</c:when>
-										<c:when test="${role == 'user' and ( !empty(li.idUser) and li.idUser != id )}">
-											<td style="color:red;"><b>Ce livre est reservé par ${li.nomUser}</b></td>
-										</c:when>
 										<c:when test="${ role == 'admin'}">
-											<td><a href="http://localhost:8080/Projet_J2EE_CESI/RemoveLivre?id=${li.id}" class="btn btn-danger">Supprimer</a></td>
+											<td><a href="http://localhost:8080/Projet_J2EE_CESI/RemoveUser?id=${user.id}" class="btn btn-danger">Supprimer</a></td>
 										</c:when>
 									</c:choose>
 			

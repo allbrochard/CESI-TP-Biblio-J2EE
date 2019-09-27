@@ -34,7 +34,7 @@
 	</servlet>
 
 	<servlet>
-		<servlet-name>insertUser</servlet-name>
+		<servlet-name>InsertUser</servlet-name>
 		<servlet-class>fr.cesi.bibliotheque.servlet.InsertUserServlet</servlet-class>
 	</servlet>
 
@@ -47,5 +47,16 @@
 		<servlet-name>reserverLivre</servlet-name>
 		<servlet-class>fr.cesi.bibliotheque.servlet.ReserverLivreServlet</servlet-class>
 	</servlet>
+
+	<servlet>
+		<servlet-name>removeUser</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.RemoveUserServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>listUser</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.ListUserServlet</servlet-class>
+	</servlet>
+	
 	
 </web-fragment>

@@ -4,13 +4,13 @@
 <head>
 <meta charset="utf-8" />
 <title>ListProduct</title>
-<link type="text/css" rel="stylesheet" href="form.css" />
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+<link type="text/css" rel="stylesheet" href="form.css" />
 </head>
-<body class="text-center">
+<body class="text-center" style="height: 780px">
 	<header>
 		<div class="collapse bg-dark" id="navbarHeader">
 			<div class="container">
@@ -35,7 +35,7 @@
 		</div>
 		<div class="navbar navbar-dark bg-dark shadow-sm">
 			<div class="container d-flex justify-content-between">
-				<strong style="color: white;">Bibliothèque</strong>
+				<strong style="color: white;"><a href="/Accueil">Bibliothèque</a></strong>
 				<c:choose>
 					<c:when test="${ !empty role and role == 'admin' }">
 						<strong style="color: white;"><c:out
@@ -67,36 +67,56 @@
 			</div>
 		</div>
 	</header>
+	<c:if test="${ !empty role and role == 'admin' }">
+		<div class="row" style="height:100% ;">
+			<div class="col-md-2" style="background-color: #3d444b!important">
+				<div class="" >
+					<form method="get" action="Accueil" class="form-signin">
+						<button class="btn btn-lg btn-link btn-block" type="submit"
+							style="text-decoration: none; color: white;">Accueil</button>
+					</form>
+					<form method="get" action="InsertUser" class="form-signin">
+						<button class="btn btn-lg btn-link btn-block" type="submit"
+							style="text-decoration: none; color: white;">Ajouter un utilisateur </button>
+					</form>
+					<form method="get" action="InsertLivre" class="form-signin">
+						<button class="btn btn-lg btn-link btn-block" type="submit"
+							style="text-decoration: none; color: white;">Ajouter un livre</button>
+					</form>
+					<form method="get" action="ListUser" class="form-signin">
+						<button class="btn btn-lg btn-link btn-block" type="submit"
+							style="text-decoration: none; color: white;">Liste des utilisateurs</button>
+					</form>
+				</div>	
+			</div>
+		<div class="col-md-10">
+	</c:if>
 	<div class="row">
 		<div class="col-md-4 offset-md-4">
-			<form>
-				<div class="form-group" method="post" action="inscription">
-					<label for="login">Login</label> <input type="text"
+			<form method="post" action="InsertUser">
+				<div class="form-group">
+					<input type="text"
 						class="form-control" id="login" name="login"
 						aria-describedby="loginhelp" placeholder="Entrez le login">
-					<small id="loginhelp" class="form-text text-muted">Entrez
-						le login du compte</small>
-				</div>
-				<div class="form-group" method="post" action="inscription">
-					<label for="nom">Nom</label> <input type="text"
-						class="form-control" id="nom" name="nom"
-						aria-describedby="nomhelp" placeholder="Entrez le nom"> <small
-						id="nomhelp" class="form-text text-muted">Entrez le nom
-						complet</small>
 				</div>
 				<div class="form-group">
-					<label for="password">Password</label> <input type="password"
+					<input type="text"
+						class="form-control" id="nom" name="nom"
+						aria-describedby="nomhelp" placeholder="Entrez le nom">
+				</div>
+				<div class="form-group">
+					<input type="password"
 						class="form-control" id="password" name="password"
-						placeholder="Password">
+						placeholder="Entrez le password">
 				</div>
-				<div class="form-group" method="post" action="inscription">
-					<label for="id">ID</label> <input type="text" class="form-control"
-						id="id" name="id" placeholder="Entrez l'id">
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-primary">Ajouter</button>
 			</form>
 		</div>
 	</div>
+	<c:if test="${ !empty role and role == 'admin' }">
+			</div>
+		</div>
+	</c:if>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
