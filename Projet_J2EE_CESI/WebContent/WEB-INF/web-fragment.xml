@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-fragment>
+	<name>Commerce TP</name>
+	<listener>
+		<listener-class>
+			fr.cesi.commerce.classe.Product
+		</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name></servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.InitialisationServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.LoginUserServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>loginAdmin</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.LoginAdminServlet</servlet-class>
+	</servlet>
+	
+
+	<servlet>
+		<servlet-name>acceuil</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.AccueilServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>insertLivre</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.InsertLivreServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>insertUser</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.InsertUserServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>removeLivre</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.RemoveLivreServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>reserverLivre</servlet-name>
+		<servlet-class>fr.cesi.bibliotheque.servlet.ReserverLivreServlet</servlet-class>
+	</servlet>
+	
+</web-fragment>
